@@ -3,9 +3,9 @@ let form = document.getElementById("form");
 
 if (form) {
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // page reload বন্ধ
+    e.preventDefault(); 
 
-    // input value
+    // input nilam
     let key = document.getElementById("key").value;
 
     let student = {
@@ -20,13 +20,13 @@ if (form) {
     let data = localStorage.getItem(key);
 
     if (data) {
-      data = JSON.parse(data); // string → array
-      data.push(student); // নতুন data যোগ
+      data = JSON.parse(data);
+      data.push(student); 
     } else {
-      data = [student]; // প্রথম data
+      data = [student]; 
     }
 
-    // save 
+    // save
     localStorage.setItem(key, JSON.stringify(data));
 
     alert("Saved!");
@@ -35,9 +35,9 @@ if (form) {
   });
 }
 
-// =====================
+
 // Data 
-// =====================
+
 
 function loadData() {
   let key = document.getElementById("viewKey").value;
