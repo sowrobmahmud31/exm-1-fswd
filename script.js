@@ -1,11 +1,11 @@
-// form ধরলাম
+// form 
 let form = document.getElementById("form");
 
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // page reload বন্ধ
 
-    // input থেকে value নিচ্ছি
+    // input value
     let key = document.getElementById("key").value;
 
     let student = {
@@ -16,7 +16,7 @@ if (form) {
       course: document.getElementById("course").value,
     };
 
-    // পুরানো data আনছি
+    // get old data
     let data = localStorage.getItem(key);
 
     if (data) {
@@ -26,17 +26,17 @@ if (form) {
       data = [student]; // প্রথম data
     }
 
-    // save করছি
+    // save 
     localStorage.setItem(key, JSON.stringify(data));
 
     alert("Saved!");
 
-    form.reset(); // ফর্ম খালি
+    form.reset(); 
   });
 }
 
 // =====================
-// Data দেখানো
+// Data 
 // =====================
 
 function loadData() {
